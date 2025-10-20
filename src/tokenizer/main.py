@@ -1,5 +1,16 @@
 import tiktoken
 
+def tokenize_text(text, encoding):
+    return encoding.encode(text)
+
+def decode_tokens(tokens, encoding):
+    return [encoding.decode_single_token_bytes(token) for token in tokens]
+
 if __name__ == "__main__":
-    encoding = tiktoken.get_encoding("cl100k_base")
-    [print(encoding.decode_single_token_bytes(token)) for token in encoding.encode("Hello, Large Language Models!")]
+    my_text = "Dzień dobry!"
+    encoding = tiktoken.get_encoding("o200k_base")
+    tokens = tokenize_text(my_text, encoding)
+    [print(token) for token in tokens]
+
+    decoded_tokens = decode_tokens(tokens, encoding)
+    [print(decoded_token) for decoded_token in decoded_tokens]
