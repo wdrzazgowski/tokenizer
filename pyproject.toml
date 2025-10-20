@@ -3,11 +3,12 @@ name = "tokenizer"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Your Name",email = "you@example.com"}
+    {name = "Wojciech Drzazgowski",email = "wojciech.drzazgowski@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "tiktoken (>=0.12.0,<0.13.0)"
 ]
 
 [tool.poetry]
